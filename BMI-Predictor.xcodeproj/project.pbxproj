@@ -6,8 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3CD63EFB5581172FFAAC4E9A /* Pods_BMI_Predictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A05CD98FF5F43805BAE374D /* Pods_BMI_Predictor.framework */; };
+		EB9364692EEA768100408C5B /* bodexmodel.tflite in Resources */ = {isa = PBXBuildFile; fileRef = EB9364682EEA768100408C5B /* bodexmodel.tflite */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		8DF873A69D826CB061A9993C /* Pods-BMI-Predictor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMI-Predictor.debug.xcconfig"; path = "Target Support Files/Pods-BMI-Predictor/Pods-BMI-Predictor.debug.xcconfig"; sourceTree = "<group>"; };
+		9A05CD98FF5F43805BAE374D /* Pods_BMI_Predictor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMI_Predictor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF9C6C472891D1B6FF0DFC8D /* Pods-BMI-Predictor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMI-Predictor.release.xcconfig"; path = "Target Support Files/Pods-BMI-Predictor/Pods-BMI-Predictor.release.xcconfig"; sourceTree = "<group>"; };
 		EB50375E2EEA721B006D77DA /* BMI-Predictor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMI-Predictor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9364682EEA768100408C5B /* bodexmodel.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodexmodel.tflite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,17 +32,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CD63EFB5581172FFAAC4E9A /* Pods_BMI_Predictor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21A6A42286C9FA330651CE65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A05CD98FF5F43805BAE374D /* Pods_BMI_Predictor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D136292F301929196DD03612 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DF873A69D826CB061A9993C /* Pods-BMI-Predictor.debug.xcconfig */,
+				BF9C6C472891D1B6FF0DFC8D /* Pods-BMI-Predictor.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EB5037552EEA721B006D77DA = {
 			isa = PBXGroup;
 			children = (
+				EB9364672EEA766200408C5B /* models */,
 				EB5037602EEA721B006D77DA /* BMI-Predictor */,
 				EB50375F2EEA721B006D77DA /* Products */,
+				D136292F301929196DD03612 /* Pods */,
+				21A6A42286C9FA330651CE65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +75,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		EB9364672EEA766200408C5B /* models */ = {
+			isa = PBXGroup;
+			children = (
+				EB9364682EEA768100408C5B /* bodexmodel.tflite */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -52,9 +90,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB5037692EEA721C006D77DA /* Build configuration list for PBXNativeTarget "BMI-Predictor" */;
 			buildPhases = (
+				FEC0FD6B337F83204248D387 /* [CP] Check Pods Manifest.lock */,
 				EB50375A2EEA721B006D77DA /* Sources */,
 				EB50375B2EEA721B006D77DA /* Frameworks */,
 				EB50375C2EEA721B006D77DA /* Resources */,
+				423F7879D11C4BAA1AB74733 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -64,8 +104,6 @@
 				EB5037602EEA721B006D77DA /* BMI-Predictor */,
 			);
 			name = "BMI-Predictor";
-			packageProductDependencies = (
-			);
 			productName = "BMI-Predictor";
 			productReference = EB50375E2EEA721B006D77DA /* BMI-Predictor.app */;
 			productType = "com.apple.product-type.application";
@@ -109,10 +147,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9364692EEA768100408C5B /* bodexmodel.tflite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		423F7879D11C4BAA1AB74733 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BMI-Predictor/Pods-BMI-Predictor-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BMI-Predictor/Pods-BMI-Predictor-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BMI-Predictor/Pods-BMI-Predictor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEC0FD6B337F83204248D387 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BMI-Predictor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EB50375A2EEA721B006D77DA /* Sources */ = {
@@ -162,7 +247,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -225,7 +310,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -246,6 +331,7 @@
 		};
 		EB50376A2EEA721C006D77DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DF873A69D826CB061A9993C /* Pods-BMI-Predictor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -277,6 +363,7 @@
 		};
 		EB50376B2EEA721C006D77DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF9C6C472891D1B6FF0DFC8D /* Pods-BMI-Predictor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
